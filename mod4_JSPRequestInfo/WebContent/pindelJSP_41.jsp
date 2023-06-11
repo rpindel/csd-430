@@ -21,7 +21,7 @@ mod4.1 JSP - RequestInfo
         <h1>Who is your favorite Pokemon?</h1>
         
         <%
-     		// Name, Number, Type1, Type2, First Region
+     		// PokeDex Arrays : Name, Number, Type1, Type2, First Region
      		String[] mewDex = {"Mew", "151", "Psychic", "None", "Kanto"};
         	String[] pikachuDex = {"Pikachu", "025", "Electric", "None", "Kanto"};
         	String[] charizardDex = {"Charizard", "006", "Fire", "Flying", "Kanto"};
@@ -32,10 +32,6 @@ mod4.1 JSP - RequestInfo
                 		out.println(request.getParameter("radioButton"));
                 		out.println(" is my favorite too!");
                 		out.println("<br/>");
-                		//out.println("<br/>");
-                		/*for (int i = 0; i < mewDex.length; i++) {
-                			out.println(mewDex[i] + " ");
-                		}*/
                 		%>
                 		
                 		<p>
@@ -63,13 +59,9 @@ mod4.1 JSP - RequestInfo
                 		out.println(request.getParameter("radioButton"));
                 		out.println(" but my favorite is Mew!");
                 		out.println("<br/>");
-                		//out.println("<br/>");
                 		switch (pokeDex)
                 		{
                 			case "Pikachu":
-                				/*for (int i = 0; i < pikachuDex.length; i++) {
-                    				out.println(pikachuDex[i] + " ");
-                    			}*/
                 				%>
                 				<p>
          						<table>
@@ -90,9 +82,6 @@ mod4.1 JSP - RequestInfo
          						<%
                 				break;
                 			case "Charizard":
-                				/*for (int i = 0; i < charizardDex.length; i++) {
-                    				out.println(charizardDex[i] + " ");
-                    			}*/
                 				%>
                 				<p>
                 				<table>
@@ -113,9 +102,6 @@ mod4.1 JSP - RequestInfo
      							<%	
                 				break;
                 			case "Bidoof":
-                				/*for (int i = 0; i < bidoofDex.length; i++) {
-                    				out.println(bidoofDex[i] + " ");
-                    			}*/
                 				%>
                 				<p>
                 				<table>
@@ -154,10 +140,9 @@ mod4.1 JSP - RequestInfo
         
         	<form action='pindelJSP_41.jsp' method='post'>
             	<p>
-            		Who is your favorite Pokemon from the list?
+            		&emsp; Select it from the list below to learn more about it!
             		<br/>
             		<br/>
-            		&emsp; Select it below to learn more!
             	</p>
             	<p>
                 	<label>
@@ -179,12 +164,14 @@ mod4.1 JSP - RequestInfo
                     	Bidoof
                     	<input name='radioButton' type='radio' value='Bidoof' />
                 	</label>
+                	<br/>
+                	<br/>
             	</p>
             	<p>
                 	<input type='submit' value='Submit' />
             	</p>
             	<p>
-                	<input type='reset' value='Clear Entries' />
+                	<input type='reset' value='Reset Checkbox' />
             	</p>
         	</form>
         
