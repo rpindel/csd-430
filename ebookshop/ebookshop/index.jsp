@@ -21,7 +21,7 @@
 	Vector<ebookshop.Book> booklist = 
 		(Vector<ebookshop.Book>)session.getValue("ebookshop.list");
 	if (booklist == null) {
-	response.sendRedirect("/ebookshop/eshop");
+		response.sendRedirect("/ebookshop/eshop");
 	}
 	else {
 	%>
@@ -32,11 +32,62 @@
 			<select name=book>
 			
 <% // Scriplet 2: Copy the booklist to the selection control
-
-// page 98
+	for (int i = 0; i < booklist.size(); i++) {
+		out.println("<option>" + (String)booklist.elementAt(i) + 
+		"</option>");
+	}
 %>
 
-</select></form>
+		</select>
+	Quantity: <input type="text" name="qty" size="3" value="i">
+	<input type="submit" value="Add to Cart">
+		</form>
+	<p/>
+	
+<% // Scriplet 3: Check whether the shopping cart is empty
+	Vector shoplist =
+		(Vector<ebookshop.Book>)session.getAttribute("ebookshop.cart");
+	if (shoplist != null && shoplist.size() > 0) {
+%>
 
+	<table border="1" cellpadding="2">
+	<tr>
+	<td>TITLE</td>
+	<td>PRICE</td>
+	<td>QUANTITY</td>
+	<td></td>
+	</tr>
+
+<% // Scriplet 4: Display the books in the shopping cart
+	for (int i = 0; i < shoplist.size(); i++) {
+		Book aBook=shoplist.elementAt(i);
+%>
+	
+	<tr>
+		<form name="removeFrom" action="eshop" method="POST">
+			<input type="hidden" name="position" value=" <%=i%> ">
+			<input type="hidden" name="do_this" value="remove">
+			<td><%=aBook.getTitle()%></td>
+			<td align="right">$<%=aBook.getPrice()%></td>
+			<td align="right"><%=aBook.getQuantity()%></td>
+			<td><input type="submit" value="Remove from Cart"></td>
+		</form>
+	</tr>
+
+<%
+	} // for (int i ..)
+%>
+		
+	</table>
+	<p/>
+	<form name="checkoutForm" action="eshop" method="POST">
+		<input type="hidden" name="do_this" value="checkout">
+		<input type="submit" value="Checkout">
+	</form>
+
+<%
+	} // if (shoplist..)
+	} // if (booklist..esle..)
+%>
 </body>
 </html>
