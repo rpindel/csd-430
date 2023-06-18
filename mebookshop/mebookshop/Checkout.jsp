@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>E-Bookshop Checkout</title>
+<title>ME-Bookshop Checkout</title>
 <style type="text/css">
 	body {background-color: gray; font-size: 10pt;}
 	H1 {font-size: 20pt;}
@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-	<H1>Your Online Bookshop - Checkout</H1>
+	<H1>Your Online Bookshop - Checkout (ME)</H1>
 	<hr/><p/>
 	<table border="1" cellpadding="2">
 		<tr>

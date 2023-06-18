@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>E-Bookshop</title>
+<title>ME-Bookshop</title>
 <style type="text/css">
 	body {background-color: gray; font-size: 10pt;}
 	H1 {font-size: 20pt;}
@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-	<H1>Your Online Bookshop</H1>
+	<H1>Your Online Bookshop (ME)</H1>
 	<hr/><p/>
 
 <% // Scriptlet 1: Check whether the booklist is ready
