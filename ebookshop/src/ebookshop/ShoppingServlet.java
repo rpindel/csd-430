@@ -56,18 +56,17 @@ public class ShoppingServlet extends HttpServlet {
 	      (Vector<Book>)session.getAttribute("ebookshop.cart");
 	    String do_this = req.getParameter("do_this");
 
-	    // If it is the first time, initialize the list of books, which in
-	    // real life would be stored in a database on disk
+	    // If it is this browser's first session, initialize the list of books
+	    // Must clear cookies/site data if book list changes
 	    if (do_this == null) {
 	      Vector<String> blist = new Vector<String>();
-	      blist.addElement("Introducing Algorithms in C: A Step-by-step Guide to Algorithms in C. Luciano Manelli $32.92");
-	      blist.addElement("The Definitive Guide to Java Swing. John Zukowski $41.99");
-	      blist.addElement("Learn Java with Math: Using Fun Projects and Games. Ron Dai $25.37");
-	      blist.addElement("Learn HTML5 and Javascript for iOS.  Scott Preston  $39.99");
-	      blist.addElement("Java 7 for Absolute Beginners. Jay Bryant  $39.99");
-	      blist.addElement("Beginning Android 4.  Livingston  $39.99");
-	      blist.addElement("Pro Spatial with SQL Server 2012.  Alastair Aitchison  $59.99");
-	      blist.addElement("Beginning Database Design.  Clare Churcher  $34.99");
+	      blist.addElement("Rudimentary Python.  Sara Slither  $29.99");
+	      blist.addElement("Java: Beyond the Beans.  B. Lackoffee  $49.99");
+	      blist.addElement("Dynatrace: Analysis and Seeing the Hidden Data.  Y. Nointeger  $34.99");
+	      blist.addElement("The Perfect Pancake.  F.L. Apjack  $19.99");
+	      blist.addElement("Fishy on Me: RMDBS for the Navy.  Tico.  $78.99");
+	      blist.addElement("Programming with Android 200.  Google Overloads  $17.99");
+	      blist.addElement("The Poopy Place: Sewage Nightmares.  P. Ewe Oswald  $10.42");
 	      session.setAttribute("ebookshop.list", blist);
 	      ServletContext    sc = req.getSession().getServletContext();
 	      RequestDispatcher rd = sc.getRequestDispatcher("/");
@@ -75,8 +74,8 @@ public class ShoppingServlet extends HttpServlet {
 	      }
 	    else {
 
-	      // If it is not the first request, it can only be a checkout request
-	      // or a request to manipulate the list of books being ordered
+	      // If it is not the browser's first session, the request can only be for checkout
+	      // or to manipulate the list of books being ordered
 	      if (do_this.equals("checkout"))  {
 	        float dollars = 0;
 	        int   books = 0;

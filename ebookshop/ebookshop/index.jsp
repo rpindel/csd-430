@@ -13,7 +13,7 @@
 <body>
   <H1>Your Online Bookshop</H1>
   <hr/><p/>
-<%  // Scriptlet 1: check whether the book list is ready
+<%  // Scriptlet 1: Check whether the book list is ready
   Vector booklist =
       (Vector<ebookshop.Book>)session.getAttribute("ebookshop.list");
   if (booklist == null) {
@@ -25,7 +25,7 @@
       <input type="hidden" name="do_this" value="add">
       Book:
       <select name=book>
-<%  // Scriptlet 2: copy the book list to the selection control
+<%  // Scriptlet 2: Copy the book list to the selection control
         for (int i = 0; i < booklist.size(); i++) {
           out.println("<option>" + (String)booklist.elementAt(i) + "</option>");
           }
@@ -35,7 +35,7 @@
       <input type="submit" value="Add to Cart">
       </form>
     <p/>
-<%  // Scriptlet 3: check whether the shopping cart is empty
+<%  // Scriptlet 3: Check whether the shopping cart is empty
     Vector<ebookshop.Book> shoplist =
         (Vector<ebookshop.Book>)session.getAttribute("ebookshop.cart");
     if (shoplist != null  &&  shoplist.size() > 0) {
@@ -47,7 +47,7 @@
       <td>QUANTITY</td>
       <td></td>
       </tr>
-<%  // Scriptlet 4: display the books in the shopping cart
+<%  // Scriptlet 4: Display the books in the shopping cart
       for (int i = 0; i < shoplist.size(); i++) {
         Book aBook = shoplist.elementAt(i);
   %>

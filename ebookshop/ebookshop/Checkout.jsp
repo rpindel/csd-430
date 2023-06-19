@@ -39,6 +39,6 @@
       </tr>
     </table>
   <p/>
-  <a href="/ebookshop/eshop">Buy more!</a>
+  <a href="/ebookshop/eshop">Buy More!</a>
   </body>
 </html>
