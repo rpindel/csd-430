@@ -1,10 +1,24 @@
+<!-- 
+Robin Pindel
+Module 5 ebookshop files with comments
+6/25/2023
+
+This file serves as the view of the check out page of the ebookshop application.
+
+Reference - Edited after Download from:
+Apress. (n.d.-a). beginning-jakarta-ee-web-dev/ch03_code/ebookshop at master · 
+Apress/beginning-jakarta-ee-web-dev. GitHub. 
+https://github.com/Apress/beginning-jakarta-ee-web-dev/tree/master/ch03_code/ebookshop
+ -->
+
+
 <%@page language="java" contentType="text/html"%>
 <%@page session="true" import="java.util.Vector, ebookshop.Book" %>
 <html>
 <head>
   <title>E-Bookshop Checkout</title>
   <style type="text/css">
-    body {background-color: gray; font-size: 10pt;}
+    body {background-color: pink; font-size: 10pt;}
     H1 {font-size: 20pt;}
     table {background-color: white;}
     </style>
@@ -19,7 +33,9 @@
       <td align="right">QUANTITY</td>
       </tr>
 <%
-    Vector<Book> shoplist =
+	// Pindel - This portion copies the shoplist object line by line into the checkout page
+	// table with formatting like a standard order receipt
+	Vector<Book> shoplist =
         (Vector<Book>)session.getAttribute("ebookshop.cart");
     for (Book anOrder : shoplist) {
  %>
@@ -30,6 +46,9 @@
         </tr>
 <%
       }
+    // Pindel - This portion causes the session to be invalidated such that if the the application is restarted
+    // from the browser session the shoplist (cart) would be new and empty.  Without error handling, refreshing
+    // the checkout page causes an exception since it cannot display a shoplist object that is null.
     session.invalidate();
   %>
     <tr>

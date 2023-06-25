@@ -1,3 +1,18 @@
+/*
+Robin Pindel
+Module 5 ebookshop files with comments
+6/25/2023
+
+This file serves as the controller of the ebookshop application.  It will handle taking 
+input from the views (index and checkout) and adjust their display as necessary.
+
+Reference - Edited after Download from:
+Apress. (n.d.-a). beginning-jakarta-ee-web-dev/ch03_code/ebookshop at master · 
+Apress/beginning-jakarta-ee-web-dev. GitHub. 
+https://github.com/Apress/beginning-jakarta-ee-web-dev/tree/master/ch03_code/ebookshop
+*/
+
+
 package ebookshop;
 
 import java.io.IOException;
@@ -12,10 +27,14 @@ import java.util.Vector;
 import javax.servlet.ServletContext;
 import javax.servlet.RequestDispatcher; 
 import ebookshop.Book;
+import java.math.MathContext;
+import java.math.BigDecimal;
 
 /**
  * Servlet implementation class ShoppingServlet
  */
+
+// Pindel - Servlet name as referred by application requests
 @WebServlet("/eshop")
 public class ShoppingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -56,8 +75,8 @@ public class ShoppingServlet extends HttpServlet {
 	      (Vector<Book>)session.getAttribute("ebookshop.cart");
 	    String do_this = req.getParameter("do_this");
 
-	    // If it is this browser's first session, initialize the list of books
-	    // Must clear cookies/site data if book list changes
+	    // If it is this browser's first session, initialize and populate the list of books
+	    // Pindel - Must clear cookies/site data if book list changes for it to reflect properly
 	    if (do_this == null) {
 	      Vector<String> blist = new Vector<String>();
 	      blist.addElement("Rudimentary Python.  Sara Slither  $29.99");
@@ -66,9 +85,10 @@ public class ShoppingServlet extends HttpServlet {
 	      blist.addElement("The Perfect Pancake.  F.L. Apjack  $19.99");
 	      blist.addElement("Fishy on Me: RMDBS for the Navy.  Tico.  $78.99");
 	      blist.addElement("Programming with Android 200.  Google Overloads  $17.99");
-	      blist.addElement("The Poopy Place: Sewage Nightmares.  P. Ewe Oswald  $10.42");
+	      blist.addElement("The Poopy Place: Sewage Nightmares.  P. Ewe Oswald  $10.49");
 	      session.setAttribute("ebookshop.list", blist);
 	      ServletContext    sc = req.getSession().getServletContext();
+	      // Pindel - Request stays within index.jsp view
 	      RequestDispatcher rd = sc.getRequestDispatcher("/");
 	      rd.forward(req, res);
 	      }
@@ -88,6 +108,7 @@ public class ShoppingServlet extends HttpServlet {
 	        req.setAttribute("dollars", new Float(dollars).toString());
 	        req.setAttribute("books", new Integer(books).toString());
 	        ServletContext    sc = req.getSession().getServletContext();
+	        // Pindel - Request routes to checkout.jsp view instead of main page index.jsp
 	        RequestDispatcher rd = sc.getRequestDispatcher("/Checkout.jsp");
 	        rd.forward(req, res);
 	        } // if (..checkout..
@@ -123,12 +144,15 @@ public class ShoppingServlet extends HttpServlet {
 	        // Save the updated list of books and return to the home page
 	        session.setAttribute("ebookshop.cart", shoplist);
 	        ServletContext sc = req.getSession().getServletContext();
+	        // Pindel - Request stays on index.jsp as the view is working with the
+	        // shoplist (cart) contents
 	        RequestDispatcher rd = sc.getRequestDispatcher("/");
 	        rd.forward(req, res);
 	        } // if (..checkout..else
 	      } // if (do_this..
 	    } // doPost
 
+	  // Pindel - Create book objects from model
 	  private Book getBook(HttpServletRequest req) {
 	    String myBook = req.getParameter("book");
 	    int    n = myBook.indexOf('$');
