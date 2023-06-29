@@ -9,66 +9,69 @@
 <body>     
 	   
 	<%
-		if(request.getMethod().equals("POST")){
+	//if(request.getMethod().equals("POST")){
+	if(request.getMethod().equals("GET")){
 			
-			Connection conn = null;
-        	Statement stmt = null;
-        	ResultSet rset = null;
+		Connection conn = null;
+       	Statement stmt = null;
+       	ResultSet rset = null;
         	
- 		    try{                
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "mysqltest");                
-            }
-            catch(Exception e){
-                out.println("<br />Error connecting to local MySQL installation.<br />");
-            }
+ 	    try{                
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "mysqltest");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "mysqltest");
+        }
+        catch(Exception e){
+            out.println("<br />Error connecting to local MySQL installation.<br />");
+        }
             
-            try{
-            	stmt = conn.createStatement();
-            	rset = stmt.executeQuery("show databases;");
-            	out.println("<br />Successfully queried local MySQL install.<br /><br />");
-            }
-            catch(java.sql.SQLException e){
-                out.println("<br />Failed finding any local MySQL databases.<br />");
-            }
+        try{
+         	stmt = conn.createStatement();
+           	rset = stmt.executeQuery("show databases;");
+           	out.println("<br />Successfully queried local MySQL install.<br />");
+        }
+        catch(Exception e){
+            out.println("<br />Failed finding any local MySQL databases.<br />");
+        }
 	%>
-        <h3>Your local MySQL databases are:</h3>
-        <table border='1'>
-		<%
-            try{
-                while(rset.next()){
-        %>
-			<tr>
-        <%
-					for(int i = 1; i <= rset.getMetaData().getColumnCount(); i++){
-        %>
-			<td>
-        <% 
-					out.print((rset.getString(i)).trim()); 
-        %>
-			</td>
-        <%
-					}
-        %>
-			</tr>
-        <%
+    <h3>Your local MySQL databases are:</h3>
+    <table border='1'>
+	<%
+        try{
+ 			while(rset.next()){
+    %>
+		<tr>
+    <%
+				for(int i = 1; i <= rset.getMetaData().getColumnCount(); i++){
+    %>
+		<td>
+    <% 
+				out.print((rset.getString(i)).trim()); 
+    %>
+		</td>
+    <%
 				}
-            }
-            catch(Exception e){
-
-            }
-        %>
-          </table>
-        <%
-            try{
-                stmt.close();
-                conn.close();
-                out.println("<br />Local MySQL connection successfully closed.<br />");
-            }
-            catch(java.sql.SQLException e){
-                out.println("<br />Local MySQL connection close failed.<br />");
-            }
-		}
-		%>
+    %>
+		</tr>
+    <%
+			}
+       	}
+      	catch(Exception e){
+      		out.println("No local databases found.");
+        }
+    %>
+        </table>
+    <%
+        try{
+            stmt.close();
+            conn.close();
+            out.println("<br />Local MySQL connection successfully closed.<br />");
+        }
+        catch(Exception e){
+            out.println("<br />Local MySQL connection close failed.<br />");
+        }
+	}
+	%>
 </body>
 </html>

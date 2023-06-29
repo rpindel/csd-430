@@ -24,6 +24,7 @@ https://github.com/Apress/beginning-jakarta-ee-web-dev/tree/master/ch04_code/mys
 <body>
 	<%
 	Class.forName("com.mysql.cj.jdbc.Driver");
+	//Class.forName("oracle.jdbc.driver.OracleDriver");
 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop", "root", "mysqltest");
 	Statement stmt = conn.createStatement();
 	ResultSet rs = stmt.executeQuery("select * from books");
