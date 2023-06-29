@@ -1,3 +1,10 @@
+<!-- 
+Robin Pindel
+430 mod8 DB Post - Debug Program
+6/29/2023
+3 things
+ -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
@@ -9,30 +16,27 @@
 <body>     
 	   
 	<%
-	//if(request.getMethod().equals("POST")){
-	if(request.getMethod().equals("GET")){
+	if(request.getMethod().equals("POST")){
 			
 		Connection conn = null;
        	Statement stmt = null;
        	ResultSet rset = null;
         	
  	    try{                
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "mysqltest");
-            //Class.forName("oracle.jdbc.driver.OracleDriver");
-            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "mysqltest");
+            Class.forName("oracle.jdbc.driver.OracleDriver"); //
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "password"); //
         }
         catch(Exception e){
-            out.println("<br />Error connecting to local MySQL installation.<br />");
+            out.println("<br />Exception - Error connecting to local MySQL installation.<br />");
         }
             
         try{
          	stmt = conn.createStatement();
-           	rset = stmt.executeQuery("show databases;");
+           	rset = stmt.executeQuery("select databases;"); //
            	out.println("<br />Successfully queried local MySQL install.<br />");
         }
         catch(Exception e){
-            out.println("<br />Failed finding any local MySQL databases.<br />");
+            out.println("<br />Exception - Failed finding any local MySQL databases.<br />");
         }
 	%>
     <h3>Your local MySQL databases are:</h3>
@@ -58,7 +62,6 @@
 			}
        	}
       	catch(Exception e){
-      		out.println("No local databases found.");
         }
     %>
         </table>
@@ -69,7 +72,7 @@
             out.println("<br />Local MySQL connection successfully closed.<br />");
         }
         catch(Exception e){
-            out.println("<br />Local MySQL connection close failed.<br />");
+            out.println("<br />Exception - Local MySQL connection close failed.<br />");
         }
 	}
 	%>
