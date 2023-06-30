@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="mod9_databaseJSPBean">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="mod9_databaseJSPBean"/>
+        <property name="java-output-path" value="/mod9_databaseJSPBean/build/classes"/>
+    </wb-module>
+</project-modules>
