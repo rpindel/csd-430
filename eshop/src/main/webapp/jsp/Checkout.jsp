@@ -1,3 +1,13 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file is the View for checking out.  It retrieves the shopping cart details
+and links to other JSPs for menus for order confirmation.
+-->
+
+
 <%@page language="java" contentType="text/html"%>
 <%@page import="java.util.Hashtable"%>
 <%@page import="eshop.beans.CartItem"%>

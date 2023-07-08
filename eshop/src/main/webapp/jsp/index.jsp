@@ -1,3 +1,13 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file is the View for the main landing page of the application. It
+links to other JSPs for menus for order confirmation.
+-->
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

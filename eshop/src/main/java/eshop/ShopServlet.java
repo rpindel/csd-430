@@ -1,3 +1,13 @@
+/*
+ * Robin Pindel
+ * mod7 Comments
+ * 7/2/2023
+ * 
+ * This file is the overall Control for the app on what jsp to direct the View to
+ * based on the user's input/action.
+ */
+
+
 package eshop;
 
 import java.io.IOException;

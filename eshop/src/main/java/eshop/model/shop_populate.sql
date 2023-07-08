@@ -1,3 +1,12 @@
+--
+-- Robin Pindel
+-- mod7 Comments
+-- 7/2/2023
+-- 
+-- This file contains SQL to populate the created database tables.
+--
+
+
 INSERT INTO `shop`.`categories` (`category_id`, `category_name`) VALUES ('1', 'Web Development');
 INSERT INTO `shop`.`categories` (`category_id`, `category_name`) VALUES ('2', 'Science Fiction');
 INSERT INTO `shop`.`categories` (`category_id`, `category_name`) VALUES ('3', 'Historical Mysteries');

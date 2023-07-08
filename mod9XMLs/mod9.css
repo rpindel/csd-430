@@ -1,0 +1,24 @@
+number {
+	display: block;
+	font-weight: bold;
+}
+
+name {
+	display: block;
+	color: red;
+}
+
+type-1 {
+	display: block;
+	color: gray;
+}
+
+type-2 {
+	display: block;
+	color: gray;
+}
+	
+home-region {
+	display: block;
+	font-style: italic;
+}	

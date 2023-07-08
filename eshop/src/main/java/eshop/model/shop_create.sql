@@ -1,3 +1,12 @@
+--
+-- Robin Pindel
+-- mod7 Comments
+-- 7/2/2023
+-- 
+-- This file contains SQL to create the database tables.
+--
+
+
 DROP DATABASE IF EXISTS `shop`;
 CREATE DATABASE `shop`;
 CREATE TABLE `shop`.`categories` (

@@ -1,3 +1,12 @@
+/*
+ * Robin Pindel
+ * mod7 Comments
+ * 7/2/2023
+ * 
+ * This file is the Bean Class describing what an Item in the Cart looks like for the application.
+ */
+
+
 package eshop.beans;
 
 public class CartItem {

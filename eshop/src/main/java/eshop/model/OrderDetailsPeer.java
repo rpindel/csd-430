@@ -1,3 +1,13 @@
+/*
+ * Robin Pindel
+ * mod7 Comments
+ * 7/2/2023
+ * 
+ * This file is the a Class describing how an order's details are inserted into the data
+ * for the application.
+ */
+
+
 package eshop.model;
 
 import java.util.Hashtable;

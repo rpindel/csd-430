@@ -1,3 +1,12 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file is the View for displaying the current shopping cart.  It too contains links to the menu JSPs.
+-->
+
+
 <%@page language="java" contentType="text/html"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.Hashtable"%>

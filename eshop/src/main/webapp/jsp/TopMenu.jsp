@@ -1,3 +1,12 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file is the View for the top edge menu.
+-->
+
+
 <%@page language="java" contentType="text/html"%>
 <%
   String base = (String)application.getAttribute("base");

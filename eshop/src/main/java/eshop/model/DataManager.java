@@ -1,3 +1,12 @@
+/*
+ * Robin Pindel
+ * mod7 Comments
+ * 7/2/2023
+ * 
+ * This file is the a Class detailing database connectivity for in the application.
+ */
+
+
 package eshop.model;
 
 import java.util.Hashtable;

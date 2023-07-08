@@ -22,28 +22,48 @@ Credit to Professor Payne for providing example code.
 	if(request.getMethod().equals("GET")){
 %>
 	<h3>Enter the pokemon details belows:</h3>
-	<form method='post' action='pokemonFormMySQL.jsp'>
-		<label>Pokedex Number</label>
-		<input type='text' name='PokedexNumber' size='4' maxlength='4'/>
-		<br />
-		<label>Name (three digits, cannot be empty)</label>
-		<input type='text' name='Name' size='20' maxlength='20'/>
-		<br />
-		<label>Type 1 (Cannot be empty)</label>
-		<input type='text' name='Type1' size='10' maxlength='10'/>
-		<br />
-		<label>Type 2 (Enter "None" if the pokemon only has one type)</label>
-		<input type='text' name='Type2' size='10' maxlength='10'/>
-		<br />
-		<label>Home Region (Cannot be empty)</label>
-		<input type='text' name='HomeRegion' size='10' maxlength='10'/>
-		<br />
-		<br />
-		<input type='submit'>
-	</form>
-	
+	<table class="entry">
+    	<form method='post' action='pokemonFormMySQL.jsp'>
+        	<tr>
+            	<td>
+                <label for="PokedexNumber">Pokedex Number</label>
+            	</td>
+            	<td><input type="text" name="PokedexNumber" size='4' maxlength='4' />
+            	</td>
+        	</tr>
+        	<tr>
+            	<td><label for="Name">Pokemon Name</label>
+            	</td>
+            	<td><input type="text" name="Name" size='20' maxlength='20' />
+            	</td>
+        	</tr>
+        	<tr>
+            	<td><label for="Type1">Type 1 (Cannot be empty)</label>
+            	</td>
+            	<td><input type="text" name="Type1" size='10' maxlength='10'/>
+            	</td>
+        	</tr>
+        	<tr>
+            	<td><label for="Type2">Type 2 (Enter "None" if the pokemon only has one type)</label>
+            	</td>
+            	<td><input type="text" name="Type2" size='10' maxlength='10 '/>
+            	</td>
+        	</tr>
+			<tr>
+	            <td><label for="HomeRegion">Home Region (Cannot be empty)</label>
+	            </td>
+            	<td><input type="text" name="HomeRegion" size='10' maxlength='10 '/>
+            	</td>
+        	</tr>
+        	<tr>
+        		<td class="sub">Submit Form</td>
+        		<td class="sub"><input type='submit'></td>
+        	</tr>
+    	</form>
+	</table>
 <br />
-<a href="http://localhost:8080/mod9_databaseJSPBean">Go back to main page</a>
+<br />
+<a href="http://localhost:8080/pindel_mod08">Go back to main page</a>
 
 <%
 	}
@@ -56,7 +76,6 @@ Credit to Professor Payne for providing example code.
 		<jsp:useBean id='myDB' class='dbBeans.MyDatabaseBeanMySQL' />
 
 <%
-
 		ResultSet resultSet = null;
 	
 		String pokedex = request.getParameter("PokedexNumber");
@@ -72,13 +91,20 @@ Credit to Professor Payne for providing example code.
 	
 		try {
 			out.println("<h2>The 430 mod8 Pokemon Database</h2>");
-			out.println("<table border='1' bgcolor='EFC3D2'>");
+			out.println("<table class=\"res\">");
+			out.println("<tr class=\"res\">");
+			out.println("<th class=\"res\">Pokedex Number</th>");
+			out.println("<th class=\"res\">Pokemon Name</th>");
+			out.println("<th class=\"res\">Type 1</th>");
+			out.println("<th class=\"res\">Type 2</th>");
+			out.println("<th class=\"res\">Home Region</th>");
+			out.println("</tr>");
 		
 			while (resultSet.next()) {
-				out.println("<tr>");
+				out.println("<tr class=\"res\">");
 				
 				for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
-					out.println("<td>");
+					out.println("<td class=\"res\">");
 					out.println((resultSet.getString(i)).trim());
 					out.println("</td>");
 				}
@@ -96,7 +122,8 @@ Credit to Professor Payne for providing example code.
 %>
 
 <br />
-<a href="http://localhost:8080/mod9_databaseJSPBean/pokemonFormMySQL.jsp">Go back to form</a>
+<br />
+<a href="http://localhost:8080/pindel_mod08/pokemonFormMySQL.jsp">Go back to form</a>
 
 <%		
 	}

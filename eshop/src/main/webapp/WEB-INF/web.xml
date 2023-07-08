@@ -1,3 +1,13 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file contains parameters for the application like the servlet routing and database connectin details.
+I had to change the database password in here to align with my local MySQL install.
+-->
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="mod9.css"?>
+
+<!DOCTYPE pokedex [
+	<!ELEMENT pokedex (pokemon)*>
+	<!ELEMENT pokemon (number, name, type-1, type-2, home-region)>
+	<!ATTLIST pokemon evolution-line CDATA #REQUIRED>
+	<!ELEMENT number (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT type-1 (#PCDATA)>
+	<!ELEMENT type-2 (#PCDATA)>
+	<!ELEMENT home-region (#PCDATA)>
+]>
+
+<pokedex>
+	<pokemon evolution-line="charmander">
+		<number>0004</number>
+		<name>Charmander</name>
+		<type-1>Fire</type-1>
+		<type-2>None</type-2>
+		<home-region>Kanto</home-region>
+	</pokemon>
+	<pokemon evolution-line="charmander">
+		<number>0005</number>
+		<name>Charmeleon</name>
+		<type-1>Fire</type-1>
+		<type-2>None</type-2>
+		<home-region>Kanto</home-region>
+	</pokemon>
+	<pokemon evolution-line="charmander">
+		<number>0006</number>
+		<name>Charizard</name>
+		<type-1>Fire</type-1>
+		<type-2>Flying</type-2>
+		<home-region>Kanto</home-region>
+	</pokemon>
+</pokedex>

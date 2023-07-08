@@ -41,7 +41,7 @@ Credit to Professor Payne for providing example code.
 	}
 
 	try {
-		statement.executeUpdate("CREATE TABLE pokemon (Pokedex CHAR(4) NOT NULL PRIMARY KEY, Name CHAR(20) NOT NULL, Type1 		CHAR(10) NOT NULL, Type2 CHAR(10) NULL, HomeRegion CHAR(10) NOT NULL)");
+		statement.executeUpdate("CREATE TABLE pokemon (Pokedex CHAR(4) NOT NULL PRIMARY KEY, Name CHAR(20) NOT NULL, Type1 CHAR(10) NOT NULL, Type2 CHAR(10) NULL, HomeRegion CHAR(10) NOT NULL)");
 		out.println("<p>Table 'pokemon' has been created successfully.</p>");
 	}
 	catch(SQLException e) {
@@ -49,10 +49,10 @@ Credit to Professor Payne for providing example code.
 	}
 	
 	try {
-		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(116, 'Horsea', 		'Water', 'None', 'Kanto')");
-		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(151, 'Mew', 		'Psychic', 'None', 'Kanto')");
-		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(390, 'Chimchar', 		'Fire', 'None', 'Sinnoh')");
-		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(399, 'Bidoof', 		'Normal', 'None', 'Sinnoh')");
+		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(116, 'Horsea', 'Water', 'None', 'Kanto')");
+		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(151, 'Mew', 'Psychic', 'None', 'Kanto')");
+		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(390, 'Chimchar', 'Fire', 'None', 'Sinnoh')");
+		statement.executeUpdate("INSERT INTO pokemon(Pokedex, Name, Type1, Type2, HomeRegion) VALUES(399, 'Bidoof', 'Normal', 'None', 'Sinnoh')");
 		statement.executeUpdate("commit");
 		
 		out.println("<p>Table 'pokemon' has been successfully populated with data.</p>");
@@ -72,7 +72,7 @@ Credit to Professor Payne for providing example code.
 %>
 
 <br />
-<a href="http://localhost:8080/mod9_databaseJSPBean">Go back to main page</a>
+<a href="http://localhost:8080/pindel_mod08">Go back to main page</a>
 
 </body>
 </html>

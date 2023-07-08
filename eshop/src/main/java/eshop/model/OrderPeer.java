@@ -1,3 +1,13 @@
+/*
+ * Robin Pindel
+ * mod7 Comments
+ * 7/2/2023
+ * 
+ * This file is the a Class describing how an order can be inserted into the databae
+ * for in the application.
+ */
+
+
 package eshop.model;
 
 import java.sql.SQLException;

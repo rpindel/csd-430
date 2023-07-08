@@ -1,3 +1,13 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file is the View for displaying book details.  It contains DB actions to retrieve the information
+and links to other JSPs for menus.
+-->
+
+
 <%@page language="java" contentType="text/html"%>
 <%@page import="eshop.beans.Book"%>
 <jsp:useBean id="dataManager" scope="application"

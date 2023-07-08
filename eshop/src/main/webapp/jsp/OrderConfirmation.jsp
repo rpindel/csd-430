@@ -1,3 +1,13 @@
+<!--
+Robin Pindel
+mod7 Comments
+7/2/2023
+
+This file is the View for the order confirmation screen.  It contains references to the database
+to retrieve order ID information and links to the other menu JSPs.
+-->
+
+
 <%@page language="java" contentType="text/html"%>
 <%@page import="java.util.Hashtable"%>
 <%@page import="eshop.beans.CartItem"%>
