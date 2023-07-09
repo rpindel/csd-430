@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pokedex XML Parsing</title>
+<title> Pokedex XML Parsing </title>
 <style>
 	td {text-align:center}
 	th, td {padding:5px}
