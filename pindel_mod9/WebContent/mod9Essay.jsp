@@ -1,3 +1,14 @@
+<%--
+Robin Pindel
+430 mod9 Coding Essay
+7/9/2023
+
+Reference to textbook for example structure
+Manelli, L., & Zambon, G. (2020). Beginning Jakarta EE Web Development: 
+Jakarta Server Pages, Jakarta Server Faces, and Apache Tomcat for Building 
+Java Web Applications. Apress.
+--%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
@@ -18,6 +29,7 @@
 </head>
 <body>
 
+<%-- Using JSTL to set table header names for output --%>
 <c:set var="col1"> Pokedex Number </c:set>
 <c:set var="col2"> Pokemon Name </c:set>
 <c:set var="col3"> Type 1 </c:set>
@@ -35,6 +47,7 @@
 	<th><c:out value="${col6}"/></th>
 	</tr>
 	
+	<%-- XPath loop to grab all data from imported XML document --%>
 	<x:forEach var="tag" select="$dom//pokemon">
 	<tr>
 		<td><x:out select="$tag/number"/></td>
