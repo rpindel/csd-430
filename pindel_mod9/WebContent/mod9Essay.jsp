@@ -25,6 +25,7 @@ Java Web Applications. Apress.
 <style>
 	td {text-align:center}
 	th, td {padding:5px}
+	th {background-color:pink}
 </style>
 </head>
 <body>
