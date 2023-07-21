@@ -7,13 +7,21 @@ Robin Pindel
 
 @charset "UTF-8";
 
+#index {
+	background-color: #b6c406;
+}
+
+#form {
+	background-color: #ffffa7;
+}
+
 table {
 	border: 1px solid black;
 }
 
 td, tr {
 	padding: 5px;
-	background-color: white;
+	background-color: #ced2d7;
 	border: 1px solid black;
 	text-align: center;	
 }

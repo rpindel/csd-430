@@ -9,6 +9,8 @@ Credit to Professor Payne for providing example code in mod8.
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ taglib prefix="dnd" uri="WEB-INF/taglib.tld"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,6 +72,9 @@ Credit to Professor Payne for providing example code in mod8.
 
 <br />
 <a href="http://localhost:8080/pindel_11">Go back to main page</a>
+<br />
+Custom Tag - 
+<dnd:backmain />
 
 </body>
 </html>

@@ -9,6 +9,8 @@ Credit to Professor Payne for providing example code in mod8.
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ taglib prefix="dnd" uri="WEB-INF/taglib.tld"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +18,7 @@ Credit to Professor Payne for providing example code in mod8.
 <title>Character Form</title>
 <link href="dndDB.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body id="form">
 
 <%
 	if(request.getMethod().equals("GET")){
@@ -82,6 +84,9 @@ Credit to Professor Payne for providing example code in mod8.
 <br />
 <br />
 <a href="http://localhost:8080/pindel_11">Go back to main page</a>
+<br />
+Custom Tag - 
+<dnd:backmain />
 
 <%
 	}
@@ -148,6 +153,9 @@ Credit to Professor Payne for providing example code in mod8.
 <br />
 <br />
 <a href="http://localhost:8080/pindel_11/dndFormMySQL.jsp">Go back to form</a>
+<br />
+Custom Tag - 
+<dnd:backform />
 
 <%		
 	}
