@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+Robin Pindel
+430mod10 JSF Example
+7/15/2023
+ 
+Reference - Code from Textbook Example
+Manelli, L., & Zambon, G. (2020). Beginning Jakarta EE Web Development: Jakarta Server Pages, 
+Jakarta Server Faces, and Apache Tomcat for Building Java Web Applications. Apress.
+ 
+Tweaks Performed: Changed name of the bean tag values to align with the change in the class name.
+I tried to adjust the bean scope to clear the value from the second and subsequent rounds of use
+but it did not work as expected and the textbook indicated similar.  I could not get it to work as 
+I wanted.  There appears to be a way to define a default value via the managed bean during construction 
+but I could figure out how.
+ -->
+
+
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+	version="2.3">
+	<managed-bean>
+		<managed-bean-name>aNameBean</managed-bean-name>
+		<managed-bean-class>Name</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>str</property-name>
+			<property-class>java.lang.String</property-class>
+			<null-value></null-value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/num1.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>goOn</from-outcome>
+			<to-view-id>/num2.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/num2.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>goBack</from-outcome>
+			<to-view-id>/num1.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

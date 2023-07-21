@@ -1,0 +1,44 @@
+/*
+Robin Pindel
+430 mod11/12 Assignment
+7/20/2023
+*/
+
+
+@charset "UTF-8";
+
+table {
+	border: 1px solid black;
+}
+
+td, tr {
+	padding: 5px;
+	background-color: white;
+	border: 1px solid black;
+	text-align: center;	
+}
+
+td.sub {
+	padding: 5px;
+	background-color: #4C7EB2;
+	color: white;
+	font-weight: bold;	
+}
+
+table.res {
+	border: 1px solid black;
+}
+
+td.res, tr.res {
+	padding: 5px;
+	background-color: #EFC3D2;
+	border: 1px solid black;
+	text-align: center;	
+}
+
+th.res {
+	padding: 5px;
+	background-color: #C19BA6;
+	color: white;
+	border: 1px solid black;
+}

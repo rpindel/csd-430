@@ -1,1 +1,0 @@
-<html><body><jsp:forward page="/first.jsf"/></body></html>
